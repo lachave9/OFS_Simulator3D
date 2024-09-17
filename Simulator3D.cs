@@ -249,19 +249,19 @@ public class Simulator3D : Spatial
 
 		strokerMesh.GlobalRotate(Vector3.Right,
 			Mathf.Deg2Rad(
-				Mathf.Lerp(45.0f, -45.0f, pitch)
+				Mathf.Lerp(30f, -30f, pitch)
 			)
 		);
 
 		strokerMesh.GlobalRotate(Vector3.Forward,
 			Mathf.Deg2Rad(
-				Mathf.Lerp(-45.0f, 45.0f, roll)
+				Mathf.Lerp(-30.0f, 30.0f, roll)
 			)
 		);
 
 		strokerMesh.RotateObjectLocal(Vector3.Up, 
 			Mathf.Deg2Rad(
-				Mathf.Lerp(-120.0f, 120.0f, twist)
+				Mathf.Lerp(-135.0f, 135.0f, twist)
 			)
 		);
 
