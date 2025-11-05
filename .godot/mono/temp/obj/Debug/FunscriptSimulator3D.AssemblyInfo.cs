@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FunscriptSimulator3D")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8b071548ab29ea90c88f01222aaedb6d9869bb4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d6dbf37208793b290ce2e251b399fa99de9a2ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("FunscriptSimulator3D")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FunscriptSimulator3D")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

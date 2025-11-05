@@ -1,0 +1,13 @@
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/bin/ExportRelease/win-x64/FunscriptSimulator3D.deps.json
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/bin/ExportRelease/win-x64/FunscriptSimulator3D.dll
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/bin/ExportRelease/win-x64/FunscriptSimulator3D.pdb
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.csproj.AssemblyReference.cache
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.AssemblyInfoInputs.cache
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.AssemblyInfo.cs
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.csproj.CoreCompileInputs.cache
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.sourcelink.json
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.dll
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/refint/FunscriptSimulator3D.dll
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/FunscriptSimulator3D.pdb
+/Users/lupechaveziii/Programs/OFS_Simulator3D/.godot/mono/temp/obj/ExportRelease/win-x64/ref/FunscriptSimulator3D.dll

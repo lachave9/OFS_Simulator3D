@@ -31,10 +31,41 @@ public partial class Simulator3D : Node3D
 		strokerMesh = GetNode<MeshInstance3D>("Stroker");
 
 		webSocketClient = new WebSocketPeer();
+		connectToServer();
+	}
+	
+	private void connectToServer()
+	{
 		var error = webSocketClient.ConnectToUrl(WsSocketUrl);
 		GD.Print("Connecting to ", WsSocketUrl, " Error: ", error);
-		GD.Print("WebSocket initial state: ", webSocketClient.GetReadyState());
 		label.Text = $"Trying to connect to {WsSocketUrl}";
+	}
+	
+	private void connectionError()
+	{
+		ClientConnected = false;
+		label.Text = "Connection error";
+		
+		scripts = new Funscript[(int)ScriptType.TypeCount];
+		webSocketClient = new WebSocketPeer();
+		connectToServer();
+	}
+
+	private void connectionClosed()
+	{
+		ClientConnected = false;
+		label.Text = "Connection closed";
+
+		scripts = new Funscript[(int)ScriptType.TypeCount];
+		webSocketClient = new WebSocketPeer();
+		connectToServer();
+	}
+
+	private void connectionEstablished()
+	{
+		ClientConnected = true;
+		GD.Print("Connection established.");
+		label.Text = "";
 	}
 
 	// public override void _Input(InputEvent ev)
@@ -108,24 +139,8 @@ public partial class Simulator3D : Node3D
 			scripts[script.Item2] = null;
 	}
 	
-	private void connectionClosed(bool wasClean)
-	{
-		ClientConnected = false;
-		label.Text = "Connection lost - attempting reconnect...";
-		GD.Print("WebSocket connection closed, attempting to reconnect...");
 
-		scripts = new Funscript[(int)ScriptType.TypeCount];
-		
-		// Attempt to reconnect after a short delay
-		GetTree().CreateTimer(2.0).Connect("timeout", new Callable(this, nameof(attemptReconnect)));
-	}
-	
-	private void attemptReconnect()
-	{
-		var error = webSocketClient.ConnectToUrl(WsSocketUrl);
-		GD.Print("Reconnecting to ", WsSocketUrl, " Error: ", error);
-		label.Text = $"Reconnecting to {WsSocketUrl}";
-	}
+
 
 	private void dataReceived()
 	{
@@ -173,16 +188,15 @@ public partial class Simulator3D : Node3D
 	{
 		webSocketClient.Poll();
 		
-		// Check connection state in Godot 4.x
+		// Check connection state - simple approach like Godot 3.x
 		var state = webSocketClient.GetReadyState();
+		
 		switch(state)
 		{
 			case WebSocketPeer.State.Open:
 				if (!ClientConnected)
 				{
-					ClientConnected = true;
-					GD.Print("WebSocket connection established.");
-					label.Text = "";
+					connectionEstablished();
 				}
 				// Check for incoming data
 				while (webSocketClient.GetAvailablePacketCount() > 0)
@@ -193,11 +207,8 @@ public partial class Simulator3D : Node3D
 			case WebSocketPeer.State.Closed:
 				if (ClientConnected)
 				{
-					connectionClosed(false);
+					connectionClosed();
 				}
-				break;
-			case WebSocketPeer.State.Connecting:
-				// Still connecting, do nothing
 				break;
 		}
 

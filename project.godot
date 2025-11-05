@@ -19,6 +19,7 @@ config/icon="res://favicon.png"
 [display]
 
 window/size/viewport_width=400
+window/size/transparent=true
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
 
@@ -54,5 +55,6 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+viewport/transparent_background=true
 environment/defaults/default_environment="res://default_env.tres"
 quality/filters/msaa=2

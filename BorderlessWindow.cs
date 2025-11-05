@@ -14,7 +14,7 @@ public partial class BorderlessWindow : Control
 
 	public override void _Ready()
 	{
-		GetWindow().Transparent = true;
+		GetTree().Root.TransparentBg = true;
 		DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless, true);
 		DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.AlwaysOnTop, true);
 

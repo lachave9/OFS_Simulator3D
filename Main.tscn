@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d2f7o6kr0iv8j"]
+[gd_scene load_steps=17 format=4 uid="uid://d2f7o6kr0iv8j"]
 
 [ext_resource type="Script" uid="uid://bm0eyelrhhirh" path="res://Simulator3D.cs" id="1"]
 [ext_resource type="Script" uid="uid://10jno4wr0b2l" path="res://BorderlessWindow.cs" id="2"]
@@ -10,32 +10,31 @@
 
 [sub_resource type="StandardMaterial3D" id="6"]
 vertex_color_use_as_albedo = true
-proximity_fade_enabled = true
-proximity_fade_distance = 0.8
-
-[sub_resource type="StandardMaterial3D" id="4"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="7"]
-albedo_color = Color(0.505882, 0.121569, 0.85098, 1)
-
-[sub_resource type="StandardMaterial3D" id="11"]
-flags_use_point_size = true
-albedo_color = Color(1, 0.380392, 0.380392, 1)
 
 [sub_resource type="CylinderMesh" id="5"]
 height = 1.75
 radial_segments = 32
 
+[sub_resource type="StandardMaterial3D" id="4"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="3"]
 size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="7"]
+albedo_color = Color(0.505882, 0.121569, 0.85098, 1)
+
+[sub_resource type="StandardMaterial3D" id="11"]
+albedo_color = Color(1, 0.380392, 0.380392, 1)
+use_point_size = true
 
 [sub_resource type="CapsuleMesh" id="10"]
 radial_segments = 32
 rings = 4
 
 [sub_resource type="Environment" id="2"]
+background_mode = 0
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
 
@@ -64,33 +63,24 @@ cache/0/16/0/scale = 1.0
 script = ExtResource("1")
 
 [node name="LineDrawer" type="MeshInstance3D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
 visible = false
 material_override = SubResource("8")
 cast_shadow = 0
 script = ExtResource("4")
 
 [node name="Stroker" type="MeshInstance3D" parent="."]
-mesh = SubResource("5")
 material_override = SubResource("6")
+mesh = SubResource("5")
 
 [node name="Twist1" type="MeshInstance3D" parent="Stroker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
-mesh = SubResource("3")
 material_override = SubResource("4")
+mesh = SubResource("3")
 
 [node name="Twist2" type="MeshInstance3D" parent="Stroker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-mesh = SubResource("3")
 material_override = SubResource("7")
+mesh = SubResource("3")
 skeleton = NodePath("../Twist1")
 
 [node name="Top" type="Marker3D" parent="Stroker"]
@@ -98,9 +88,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.875, 0)
 
 [node name="Tongue" type="MeshInstance3D" parent="Stroker"]
 transform = Transform3D(0.689567, 0, 0, 0, -2.42681e-08, 0.555189, 0, -0.310956, -1.35923e-08, 0, -0.673036, -0.295351)
-visible = false
-mesh = SubResource("10")
 material_override = SubResource("11")
+mesh = SubResource("10")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25)
@@ -119,6 +108,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2")
 
 [node name="DistanceLabel" type="Label" parent="UI"]

@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mcTgxy9d2+k=",
+  "dgSpecHash": "ay1SsgzgJio=",
   "success": true,
   "projectFilePath": "/Users/lupechaveziii/Programs/OFS_Simulator3D/FunscriptSimulator3D.csproj",
   "expectedPackageFiles": [
     "/Users/lupechaveziii/.nuget/packages/godot.sourcegenerators/4.5.1/godot.sourcegenerators.4.5.1.nupkg.sha512",
     "/Users/lupechaveziii/.nuget/packages/godotsharp/4.5.1/godotsharp.4.5.1.nupkg.sha512",
-    "/Users/lupechaveziii/.nuget/packages/microsoft.netcore.app.runtime.osx-arm64/8.0.18/microsoft.netcore.app.runtime.osx-arm64.8.0.18.nupkg.sha512",
-    "/Users/lupechaveziii/.nuget/packages/microsoft.aspnetcore.app.runtime.osx-arm64/8.0.18/microsoft.aspnetcore.app.runtime.osx-arm64.8.0.18.nupkg.sha512"
+    "/Users/lupechaveziii/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.18/microsoft.netcore.app.runtime.win-x64.8.0.18.nupkg.sha512",
+    "/Users/lupechaveziii/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.18/microsoft.aspnetcore.app.runtime.win-x64.8.0.18.nupkg.sha512"
   ],
   "logs": []
 }
